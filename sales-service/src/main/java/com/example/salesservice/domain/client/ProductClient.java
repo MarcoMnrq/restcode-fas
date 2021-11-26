@@ -6,9 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@FeignClient(name = "PRODUCT-SERVICE")
-@RequestMapping(value = "api/v2/products")
+@FeignClient(name = "PRODUCT-SERVICE",fallback = ProductHystrixFallbackFactory.class)
 public interface ProductClient {
-    @GetMapping("{id}")
+    @GetMapping("/api/v2/products/{id}")
     Product getOne(@PathVariable(name = "id") Long id);
 }

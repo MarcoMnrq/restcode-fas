@@ -2,6 +2,7 @@ package com.restcode.productservice.domain.model;
 
 import com.restcode.productservice.domain.reference.Restaurant;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 
