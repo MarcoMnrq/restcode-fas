@@ -13,14 +13,14 @@ public class SaleItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Double price;
-    
+    private Double price; // product.getPrice() * quantity
+
     private Boolean onSale;
 
     private Integer quantity;
 
     @Transient
-    private Product product;
+    private Product product; // Precio unitario
 
     @ManyToOne()
     private Sale sale;
